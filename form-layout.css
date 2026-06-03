@@ -1,0 +1,146 @@
+.contact-page {
+  padding-bottom: 76px;
+}
+
+.contact-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 780px);
+  gap: 28px;
+  align-items: end;
+  padding: 64px 0 34px;
+}
+
+.contact-hero h1 {
+  margin-bottom: 18px;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+}
+
+.form-wrap {
+  padding-top: 18px;
+}
+
+.contact-form {
+  display: grid;
+  gap: 18px;
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(21, 24, 35, 0.96), rgba(5, 6, 10, 0.97)),
+    radial-gradient(circle at 92% 0%, rgba(0, 245, 255, 0.16), transparent 30%);
+  color: #fff;
+  padding: clamp(18px, 4vw, 34px);
+  box-shadow: var(--shadow);
+}
+
+.form-row {
+  display: flex;
+  gap: 18px;
+}
+
+.contact-form label {
+  display: grid;
+  flex: 1 1 0;
+  gap: 8px;
+  font-weight: 800;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  padding: 13px 14px;
+  outline: none;
+}
+
+.contact-form select option {
+  color: #191714;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0, 245, 255, 0.18), var(--neon-cyan);
+}
+
+.contact-form ::placeholder {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  padding: 18px;
+}
+
+legend {
+  padding: 0 8px;
+  color: var(--cyan);
+  font-weight: 900;
+}
+
+.choice {
+  display: inline-flex !important;
+  grid-template-columns: auto 1fr;
+  flex: 0 1 auto !important;
+  align-items: center;
+  gap: 8px !important;
+  color: #f4efe8;
+  font-weight: 700 !important;
+}
+
+.choice input {
+  width: auto;
+  accent-color: var(--cyan);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.form-actions button {
+  min-height: 46px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 18px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.form-actions button[type="submit"] {
+  color: #05060a;
+  background: var(--cyan);
+  box-shadow: var(--neon-cyan);
+}
+
+.form-actions button[type="reset"] {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+@media (max-width: 760px) {
+  .contact-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-actions {
+    justify-content: stretch;
+  }
+
+  .form-actions button {
+    flex: 1;
+  }
+}

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EchoRate 欧美流行专辑测评</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="shell topbar">
+      <a class="brand" href="#" aria-label="EchoRate 首页">
+        <span class="brand-mark">ER</span>
+        <span>EchoRate</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="#taste-test">进入测评</a>
+        <a href="#library">专辑库</a>
+        <a href="#review">测评</a>
+        <a href="#top10">私人Top 10</a>
+        <a href="#similar">相似推荐</a>
+        <a href="contact.html">联系我们</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow kinetic-type" data-text="Western Pop Album Review">Western Pop Album Review</p>
+            <h1 class="kinetic-title" data-text="欧美流行音乐专辑测评">欧美流行音乐专辑测评</h1>
+            <p class="hero-text">
+              从旋律、制作、歌词、概念完整度和重听价值五个维度打分，快速找到与你当前口味相近的下一张专辑。
+            </p>
+            <div class="hero-actions">
+              <a class="primary-action" href="#library">浏览专辑</a>
+              <a class="secondary-action" href="#similar">查看推荐</a>
+            </div>
+          </div>
+
+          <div class="turntable" aria-label="专辑精选视觉">
+            <div class="record">
+              <span></span>
+            </div>
+            <div class="cover-stack" aria-hidden="true">
+              <img class="mini-cover" src="https://upload.wikimedia.org/wikipedia/en/f/f5/Dua_Lipa_-_Future_Nostalgia_%28Official_Album_Cover%29.png" alt="" />
+              <img class="mini-cover" src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/2b/b9/fe/2bb9fef5-d7f3-8345-25a9-db0e79fde4e4/20UMGIM11048.rgb.jpg/600x600bb.jpg" alt="" />
+              <img class="mini-cover" src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/58/11/b1/5811b172-e180-25a6-69e6-4385fbbfb5dc/17UM1IM02207.rgb.jpg/600x600bb.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="taste-test" class="shell feature-grid">
+        <div class="test-panel">
+          <div class="section-heading">
+            <p class="eyebrow">Taste Test</p>
+            <h2>进入测评</h2>
+            <p>系统会从专辑库中随机抽取 20 张专辑。你按 10 分制打分后，网站会根据高分专辑的风格、情绪和制作取向生成推荐列表。</p>
+          </div>
+          <div id="testCard" class="test-card">
+            <button id="startTest" class="primary-action" type="button">开始20张专辑测评</button>
+          </div>
+        </div>
+
+        <aside class="result-panel">
+          <div class="section-heading">
+            <p class="eyebrow">After 20 Ratings</p>
+            <h2>推荐结果</h2>
+          </div>
+          <div id="tasteResult" class="taste-result">
+            <p class="album-note">完成 20 张专辑评分后，这里会生成你的推荐清单。</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="top10" class="shell top10-panel">
+        <div class="section-heading">
+          <p class="eyebrow">Private Top 10</p>
+          <h2>私人Top 10</h2>
+          <p>在专辑库或测评详情里加入你最爱的十张专辑，网站会用它们描出你的听歌人格。</p>
+        </div>
+        <div class="top10-layout">
+          <div id="top10List" class="top10-list"></div>
+          <div class="persona-card">
+            <p class="eyebrow">Listener Portrait</p>
+            <h3>人格描述</h3>
+            <p id="personaText">把十张最爱的专辑放进来，你的夜色会开始有轮廓。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell toolbar" aria-label="专辑筛选">
+        <label class="search-field">
+          <span>搜索</span>
+          <input id="searchInput" type="search" placeholder="歌手 / 专辑 / 风格" autocomplete="off" />
+        </label>
+
+        <div class="segmented" role="group" aria-label="风格筛选">
+          <button class="chip active" type="button" data-filter="all">全部</button>
+          <button class="chip" type="button" data-filter="dance-pop">Dance Pop</button>
+          <button class="chip" type="button" data-filter="synth-pop">Synth Pop</button>
+          <button class="chip" type="button" data-filter="alt-pop">Alt Pop</button>
+          <button class="chip" type="button" data-filter="r&b-pop">R&B Pop</button>
+        </div>
+
+        <label class="select-field">
+          <span>排序</span>
+          <select id="sortSelect">
+            <option value="score">评分最高</option>
+            <option value="year">发行最新</option>
+            <option value="replay">重听价值</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="shell content-grid">
+        <section id="library" class="album-section" aria-labelledby="libraryTitle">
+          <div class="section-heading">
+            <p class="eyebrow">Library</p>
+            <h2 id="libraryTitle">专辑库</h2>
+          </div>
+          <div id="albumGrid" class="album-grid"></div>
+        </section>
+
+        <aside id="review" class="review-panel" aria-labelledby="reviewTitle">
+          <div id="selectedCover" class="selected-cover"></div>
+          <p class="eyebrow">Selected Review</p>
+          <h2 id="reviewTitle"></h2>
+          <p id="reviewMeta" class="review-meta"></p>
+          <div id="scoreBadge" class="score-badge"></div>
+          <p id="reviewText" class="review-text"></p>
+          <div id="ratingBars" class="rating-bars"></div>
+          <div id="tagList" class="tag-list"></div>
+          <div id="selectedActions" class="selected-actions"></div>
+        </aside>
+      </section>
+
+      <section id="similar" class="recommend-band">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow">Recommendation</p>
+            <h2>相似风格推荐</h2>
+          </div>
+          <div id="recommendations" class="recommendations"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

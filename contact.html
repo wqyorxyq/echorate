@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>联系我们 - EchoRate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="form-layout.css" />
+  </head>
+  <body>
+    <header class="shell topbar">
+      <a class="brand" href="index.html" aria-label="EchoRate 首页">
+        <span class="brand-mark">ER</span>
+        <span>EchoRate</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="contact.html">联系我们</a>
+      </nav>
+    </header>
+
+    <main class="contact-page">
+      <section class="shell contact-hero">
+        <div>
+          <p class="eyebrow">Contact Us</p>
+          <h1>联系我们</h1>
+          <p class="hero-text">
+            欢迎提交专辑测评建议、相似风格推荐需求或网站反馈。我们会根据你的口味偏好继续完善专辑库和推荐结果。
+          </p>
+        </div>
+      </section>
+
+      <section class="shell form-wrap">
+        <form class="contact-form" action="#" method="post">
+          <div class="form-row">
+            <label>
+              <span>姓名</span>
+              <input type="text" name="name" placeholder="请输入姓名" required />
+            </label>
+            <label>
+              <span>邮箱</span>
+              <input type="email" name="email" placeholder="name@example.com" required />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              <span>联系电话</span>
+              <input type="tel" name="phone" placeholder="请输入手机号" pattern="^[0-9+\-\s]{6,20}$" />
+            </label>
+            <label>
+              <span>反馈日期</span>
+              <input type="date" name="date" required />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              <span>反馈类型</span>
+              <select name="type" required>
+                <option value="">请选择</option>
+                <option value="review">专辑测评建议</option>
+                <option value="recommend">相似专辑推荐</option>
+                <option value="ui">页面样式反馈</option>
+                <option value="other">其他</option>
+              </select>
+            </label>
+            <label>
+              <span>喜欢的风格</span>
+              <input list="genres" name="genre" placeholder="例如 synth-pop" />
+              <datalist id="genres">
+                <option value="dance-pop"></option>
+                <option value="synth-pop"></option>
+                <option value="alt-pop"></option>
+                <option value="r&b-pop"></option>
+                <option value="country-pop"></option>
+              </datalist>
+            </label>
+          </div>
+
+          <fieldset>
+            <legend>希望我们重点提升哪一部分？</legend>
+            <label class="choice"><input type="checkbox" name="focus" value="album" /> 专辑数量</label>
+            <label class="choice"><input type="checkbox" name="focus" value="score" /> 评分维度</label>
+            <label class="choice"><input type="checkbox" name="focus" value="recommend" /> 推荐算法</label>
+            <label class="choice"><input type="checkbox" name="focus" value="visual" /> 页面视觉</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>你对当前页面的整体满意度</legend>
+            <label class="choice"><input type="radio" name="satisfaction" value="good" required /> 满意</label>
+            <label class="choice"><input type="radio" name="satisfaction" value="normal" /> 一般</label>
+            <label class="choice"><input type="radio" name="satisfaction" value="bad" /> 需要改进</label>
+          </fieldset>
+
+          <label>
+            <span>留言内容</span>
+            <textarea name="message" rows="6" placeholder="请写下你的建议或想推荐的专辑" required></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit">提交反馈</button>
+            <button type="reset">重置</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
