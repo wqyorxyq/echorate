@@ -697,6 +697,8 @@ renderTop10();
 
 function initKineticText() {
   document.querySelectorAll(".kinetic-title, .kinetic-type").forEach((element) => {
+    if (element.dataset.kineticReady === "true") return;
+    element.dataset.kineticReady = "true";
     const text = element.dataset.text || element.textContent.trim();
     element.setAttribute("aria-label", text);
     element.innerHTML = Array.from(text)

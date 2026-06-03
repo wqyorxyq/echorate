@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登录注册 - EchoRate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="form-layout.css" />
+  </head>
+  <body>
+    <header class="shell topbar">
+      <a class="brand" href="index.html" aria-label="EchoRate 首页">
+        <span class="brand-mark">ER</span>
+        <span>EchoRate</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="contact.html">联系我们</a>
+        <a href="auth.html" data-auth-link>登录 / 注册</a>
+      </nav>
+    </header>
+    <div class="marquee-bar" aria-hidden="true">
+      <div class="marquee-track">
+        <span>LOGIN SIGNAL</span><span>PRIVATE TOP 10</span><span>TASTE PROFILE</span><span>NEON ACCOUNT</span>
+        <span>LOGIN SIGNAL</span><span>PRIVATE TOP 10</span><span>TASTE PROFILE</span><span>NEON ACCOUNT</span>
+      </div>
+    </div>
+
+    <main class="contact-page auth-page">
+      <section class="shell contact-hero auth-hero">
+        <div>
+          <p class="eyebrow kinetic-type" data-text="Member Access">Member Access</p>
+          <h1 class="kinetic-title" data-text="登录注册">登录注册</h1>
+          <p class="hero-text">保存你的账户、昵称和偏好。数据存放在当前浏览器本地，适合静态网页体验。</p>
+        </div>
+      </section>
+
+      <section class="shell auth-shell">
+        <div class="auth-card">
+          <div class="auth-tabs" role="tablist" aria-label="登录注册切换">
+            <button class="active" type="button" data-auth-tab="login">登录</button>
+            <button type="button" data-auth-tab="register">注册</button>
+          </div>
+
+          <form id="loginForm" class="contact-form auth-form">
+            <label>
+              <span>邮箱</span>
+              <input type="email" name="email" autocomplete="email" placeholder="name@example.com" required />
+            </label>
+            <label>
+              <span>密码</span>
+              <input type="password" name="password" autocomplete="current-password" placeholder="请输入密码" required />
+            </label>
+            <button class="primary-action" type="submit">进入账户</button>
+          </form>
+
+          <form id="registerForm" class="contact-form auth-form hidden">
+            <label>
+              <span>昵称</span>
+              <input type="text" name="name" autocomplete="nickname" placeholder="你的音乐昵称" minlength="2" required />
+            </label>
+            <label>
+              <span>邮箱</span>
+              <input type="email" name="email" autocomplete="email" placeholder="name@example.com" required />
+            </label>
+            <label>
+              <span>密码</span>
+              <input type="password" name="password" autocomplete="new-password" placeholder="至少 6 位" minlength="6" required />
+            </label>
+            <label>
+              <span>偏好风格</span>
+              <select name="genre">
+                <option value="dance-pop">Dance Pop</option>
+                <option value="synth-pop">Synth Pop</option>
+                <option value="alt-pop">Alt Pop</option>
+                <option value="r&b-pop">R&B Pop</option>
+                <option value="hip-hop">Hip-Hop</option>
+              </select>
+            </label>
+            <button class="primary-action" type="submit">创建账户</button>
+          </form>
+
+          <p id="authMessage" class="auth-message" role="status"></p>
+        </div>
+      </section>
+    </main>
+
+    <script src="site.js"></script>
+    <script src="auth.js"></script>
+  </body>
+</html>

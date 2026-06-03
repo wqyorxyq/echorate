@@ -46,7 +46,7 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at var(--cursor-x) var(--cursor-y), rgba(255, 43, 214, 0.2), transparent 19rem),
+    radial-gradient(circle at var(--cursor-x) var(--cursor-y), rgba(255, 43, 214, calc(0.16 + var(--scroll-glow, 0) * 0.24)), transparent 19rem),
     linear-gradient(90deg, rgba(0, 245, 255, 0.045) 1px, transparent 1px),
     linear-gradient(0deg, rgba(255, 43, 214, 0.034) 1px, transparent 1px);
   background-size: auto, 72px 72px, 72px 72px;
@@ -77,6 +77,61 @@ body::after {
 main {
   position: relative;
   z-index: 1;
+}
+
+.marquee-bar {
+  position: sticky;
+  top: 72px;
+  z-index: 19;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 245, 255, 0.22);
+  background:
+    linear-gradient(90deg, rgba(0, 245, 255, 0.13), rgba(255, 43, 214, 0.12)),
+    rgba(5, 6, 10, 0.82);
+  backdrop-filter: blur(14px);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  min-width: 200%;
+  gap: 26px;
+  padding: 9px 0;
+  color: var(--cyan);
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  text-shadow: var(--neon-cyan);
+  animation: marqueeSlide 22s linear infinite;
+}
+
+.marquee-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 26px;
+  white-space: nowrap;
+}
+
+.marquee-track span::after {
+  content: "✦";
+  color: var(--rose);
+  text-shadow: var(--neon-pink);
+}
+
+.scroll-burst {
+  position: fixed;
+  z-index: 3;
+  pointer-events: none;
+  color: hsl(var(--burst-hue), 100%, 62%);
+  font-family: "Courier New", monospace;
+  font-size: clamp(0.9rem, 1.6vw, 1.35rem);
+  font-weight: 900;
+  text-shadow:
+    0 0 12px hsl(var(--burst-hue), 100%, 62%),
+    0 0 28px hsl(var(--burst-hue), 100%, 48%);
+  animation: neonBurst 920ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 a {
@@ -930,6 +985,35 @@ h2 {
   }
 }
 
+@keyframes marqueeSlide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes neonBurst {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0.72) rotate(0deg);
+    filter: blur(6px);
+  }
+
+  22% {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--burst-x), var(--burst-y), 0) scale(1.28) rotate(18deg);
+    filter: blur(2px);
+  }
+}
+
 @keyframes revealChar {
   0% {
     opacity: 0;
@@ -972,6 +1056,7 @@ h2 {
 @media (prefers-reduced-motion: reduce) {
   .kinetic-char,
   .record,
+  .marquee-track,
   body::after {
     animation: none;
     opacity: 1;
@@ -1035,6 +1120,10 @@ h2 {
     flex-direction: column;
     gap: 8px;
     padding: 12px 0;
+  }
+
+  .marquee-bar {
+    top: 116px;
   }
 
   .nav {

@@ -1,6 +1,6 @@
 # EchoRate 欧美流行专辑测评网站
 
-这是一个可直接用 Visual Studio 或 VS Code 打开的静态 Web 项目，目标浏览器为 Google Chrome。项目包含欧美流行专辑测评、风格筛选、20 张随机专辑评分推荐、私人 Top 10、相似专辑推荐，以及“联系我们”页面。
+这是一个可直接用 Visual Studio 或 VS Code 打开的静态 Web 项目，目标浏览器为 Google Chrome。项目包含欧美流行专辑测评、风格筛选、20 张随机专辑评分推荐、私人 Top 10、相似专辑推荐、登录注册，以及“联系我们”页面。
 
 ## 运行方式
 
@@ -18,5 +18,8 @@
 - 曲库范围：保留原有精选专辑，并扩充近十年 Grammy Album of the Year 提名专辑
 - 封面图：优先使用已写入的真实封面地址，其余专辑会通过 iTunes Search API 动态加载封面
 - `contact.html`：“联系我们”表单页面
+- `auth.html`：登录注册页面，使用浏览器本地存储保存用户数据
+- `site.js`：页眉登录状态、横向循环字幕和滚动霓虹喷射效果
+- `auth.js`：注册、登录、密码哈希和本地会话逻辑
 - `form-layout.css`：“联系我们”页面样式
 - `.vscode/launch.json`：VS Code 中使用 Chrome 打开页面的调试配置

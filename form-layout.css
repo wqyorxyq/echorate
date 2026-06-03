@@ -127,6 +127,75 @@ legend {
   background: rgba(255, 255, 255, 0.16);
 }
 
+.auth-page {
+  min-height: calc(100vh - 110px);
+}
+
+.auth-hero {
+  padding-bottom: 18px;
+}
+
+.auth-shell {
+  display: grid;
+  place-items: start center;
+  padding-bottom: 86px;
+}
+
+.auth-card {
+  width: min(540px, 100%);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(21, 24, 35, 0.96), rgba(5, 6, 10, 0.97)),
+    radial-gradient(circle at 12% 0%, rgba(255, 43, 214, 0.18), transparent 32%);
+  padding: clamp(16px, 4vw, 26px);
+  box-shadow: var(--shadow), var(--neon-pink);
+}
+
+.auth-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.auth-tabs button {
+  min-height: 44px;
+  border: 1px solid rgba(0, 245, 255, 0.34);
+  border-radius: 8px;
+  color: var(--cyan);
+  background: rgba(0, 245, 255, 0.08);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.auth-tabs button.active {
+  color: #05060a;
+  background: var(--cyan);
+  box-shadow: var(--neon-cyan);
+}
+
+.auth-form {
+  box-shadow: none;
+  padding: 0;
+  background: transparent;
+}
+
+.auth-form.hidden {
+  display: none;
+}
+
+.auth-message {
+  min-height: 1.6em;
+  margin: 14px 0 0;
+  color: var(--lime);
+  line-height: 1.6;
+}
+
+.auth-message[data-tone="warn"] {
+  color: var(--rose);
+}
+
 @media (max-width: 760px) {
   .contact-hero {
     grid-template-columns: 1fr;
