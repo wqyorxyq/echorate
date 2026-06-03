@@ -356,6 +356,7 @@ h2 {
 .turntable {
   position: relative;
   min-height: 430px;
+  overflow: visible;
 }
 
 .record {
@@ -648,7 +649,10 @@ h2 {
   display: flex;
   gap: 8px;
   overflow-x: auto;
+  overscroll-behavior-inline: contain;
   padding-bottom: 2px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
 
 .chip {
@@ -1080,11 +1084,13 @@ h2 {
 
   .turntable {
     min-height: 360px;
+    overflow: hidden;
   }
 
   .record {
     left: 50%;
     right: auto;
+    width: min(340px, 76vw);
     transform: translateX(-50%);
     animation: spinMobile 18s linear infinite;
   }
@@ -1150,11 +1156,20 @@ h2 {
   }
 
   .turntable {
-    min-height: 300px;
+    min-height: 260px;
+    overflow: hidden;
+  }
+
+  .record {
+    width: min(270px, 64vw);
+    top: 24px;
   }
 
   .cover-stack {
     grid-template-columns: repeat(3, 84px);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 8px;
   }
 
   .mini-cover {
