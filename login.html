@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>用户名登录 - EchoRate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="form-layout.css" />
+  </head>
+  <body>
+    <header class="shell topbar">
+      <a class="brand" href="index.html" aria-label="EchoRate 首页">
+        <span class="brand-mark">ER</span>
+        <span>EchoRate</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="contact.html">联系我们</a>
+        <a href="login.html">用户名登录</a>
+        <a href="auth.html" data-auth-link>登录 / 注册</a>
+      </nav>
+    </header>
+    <div class="marquee-bar" aria-hidden="true">
+      <div class="marquee-track">
+        <span>HTML5 STORAGE</span><span>LOCAL USERNAME</span><span>NEON LOGIN</span><span>ECHORATE ACCESS</span>
+        <span>HTML5 STORAGE</span><span>LOCAL USERNAME</span><span>NEON LOGIN</span><span>ECHORATE ACCESS</span>
+      </div>
+    </div>
+
+    <main class="contact-page auth-page">
+      <section class="shell contact-hero auth-hero">
+        <div>
+          <p class="eyebrow kinetic-type" data-text="Local Storage Login">Local Storage Login</p>
+          <h1 class="kinetic-title" data-text="用户名登录">用户名登录</h1>
+          <p class="hero-text">输入用户名后保存到浏览器本地存储，自动转到主页，并在主页显示当前用户名。</p>
+        </div>
+      </section>
+
+      <section class="shell auth-shell">
+        <form id="simpleLoginForm" class="contact-form simple-login-card">
+          <label>
+            <span>用户名</span>
+            <input id="simpleUsername" type="text" name="username" autocomplete="username" placeholder="请输入用户名" minlength="2" required />
+          </label>
+          <button class="primary-action" type="submit">进入主页</button>
+          <p class="auth-message">数据将保存到 localStorage：<code>echorateSimpleUsername</code></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="site.js"></script>
+    <script src="login.js"></script>
+  </body>
+</html>

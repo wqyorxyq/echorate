@@ -25,6 +25,7 @@
         <a href="#top10">私人Top 10</a>
         <a href="#similar">相似推荐</a>
         <a href="contact.html">联系我们</a>
+        <a href="login.html">用户名登录</a>
         <a href="auth.html" data-auth-link>登录 / 注册</a>
       </nav>
     </header>
@@ -59,6 +60,41 @@
               <img class="mini-cover" src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/2b/b9/fe/2bb9fef5-d7f3-8345-25a9-db0e79fde4e4/20UMGIM11048.rgb.jpg/600x600bb.jpg" alt="" />
               <img class="mini-cover" src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/58/11/b1/5811b172-e180-25a6-69e6-4385fbbfb5dc/17UM1IM02207.rgb.jpg/600x600bb.jpg" alt="" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell live-dashboard" aria-labelledby="liveDashboardTitle">
+        <div class="live-card user-card">
+          <p class="eyebrow">HTML5 Storage</p>
+          <h2 id="liveDashboardTitle">当前访问状态</h2>
+          <div class="live-stat">
+            <span>当前用户</span>
+            <strong id="currentUsername">未登录</strong>
+          </div>
+          <div class="live-stat">
+            <span>访问次数</span>
+            <strong id="visitCount">0</strong>
+          </div>
+          <div class="live-stat">
+            <span>系统时间</span>
+            <strong id="systemDateTime">--</strong>
+          </div>
+          <a class="secondary-action" href="login.html">输入用户名</a>
+        </div>
+
+        <div class="live-card ad-card">
+          <div class="ad-copy">
+            <p class="eyebrow">Visual Ad</p>
+            <h2 id="adTitle">Neon Album Pick</h2>
+            <p id="adText">点击切换广告图片，发现下一张值得听的专辑。</p>
+          </div>
+          <div class="ad-frame">
+            <img id="adImage" src="https://coverartarchive.org/release/0ca6db69-0719-4a00-99be-f87ef1cff6cb/front-500" alt="专辑广告图" />
+          </div>
+          <div class="ad-controls">
+            <button type="button" id="prevAd" aria-label="上一张广告">‹</button>
+            <button type="button" id="nextAd" aria-label="下一张广告">›</button>
           </div>
         </div>
       </section>
